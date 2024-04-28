@@ -105,18 +105,21 @@
     </div>
 </div>
 
-<div class="container px-4 py-5" id="custom-cards">
+<!-- โรงแรมแนะนำกรุงเทพ -->
+<div class="container px-4 py-5" id="hotelRecBangkok">
   <h2 class="pb-2 border-bottom"><i class="fa-solid fa-star" style="color: #FFD43B;"></i> โรงแรมแนะนำในประเทศ</h2>
 
-  <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="#">Home</a></li>
-      <li class="breadcrumb-item active" aria-current="page">Library</li>
-    </ol>
-  </nav>
+  <ul class="nav nav-pills mb-2">
+    <li class="nav-item">
+      <button type="button" class="btn btn-dark me-2" id="bangkokRecom1">กรุงเทพ</button>
+    </li>
+    <li class="nav-item">
+      <button type="button" class="btn btn-outline-dark me-2" id="upcountryRecom1">ต่างจังหวัด</button>
+    </li>
+  </ul>
   
-  <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-1">
-    
+  <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-1" id="cardBangkok">
+    <!-- card1 -->
     <div class="col">
       <div class="card shadow-sm">
         <img src="images/slide1.png" class="card-img-top" alt="...">
@@ -125,7 +128,7 @@
         </div>
       </div>
     </div>
-
+    <!-- card2 -->
     <div class="col">
       <div class="card shadow-sm">
         <img src="images/slide2.png" class="card-img-top" alt="...">
@@ -134,10 +137,55 @@
         </div>
       </div>
     </div>
-
+    <!-- card3 -->
     <div class="col">
       <div class="card shadow-sm">
         <img src="images/slide3.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- โรงแรมแนะนำต่างจังหวัด -->
+<div class="container px-4 py-5" id="hotelRecUp">
+  <h2 class="pb-2 border-bottom"><i class="fa-solid fa-star" style="color: #FFD43B;"></i> โรงแรมแนะนำในประเทศ</h2>
+
+  <ul class="nav nav-pills mb-2">
+    <li class="nav-item">
+      <button type="button" class="btn btn-outline-dark me-2" id="bangkokRecom2">กรุงเทพ</button>
+    </li>
+    <li class="nav-item">
+      <button type="button" class="btn btn-dark me-2" id="upcountryRecom2">ต่างจังหวัด</button>
+    </li>
+  </ul>
+  
+  <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-1" id="cardUpc">
+    <!-- card1 -->
+    <div class="col">
+      <div class="card shadow-sm">
+        <img src="images/slide3.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        </div>
+      </div>
+    </div>
+    <!-- card2 -->
+    <div class="col">
+      <div class="card shadow-sm">
+        <img src="images/slide2.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        </div>
+      </div>
+    </div>
+    <!-- card3 -->
+    <div class="col">
+      <div class="card shadow-sm">
+        <img src="images/slide1.png" class="card-img-top" alt="...">
         <div class="card-body">
           <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
         </div>
