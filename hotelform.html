@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Every Where | Main</title>
+    <title>Every Where | Form Hotel</title>
 
     <!--custom css-->
     <link rel="stylesheet" href="css/style.css">
@@ -26,12 +26,12 @@
     <!-- Logo -->
     <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
       <a href="main.html" class="d-flex align-items-center mb-2 mb-lg-0 link-body-emphasis text-decoration-none">
-        <img class="shadow d-inline-block align-text-top me-3 rounded-circle" src="images/Every logo2.png" width="50" height="50">
+        <img class="d-inline-block align-text-top me-3 rounded-circle shadow" src="images/Every logo2.png" width="50" height="50">
       </a>
       <!-- menu -->
       <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0 nav-underline">
-        <li><a href="main.html" class="nav-link px-2 link-body-emphasis active"><i class="fa-solid fa-house"></i> Home</a></li>
-        <li><a href="hotel.html" class="nav-link px-2 link-body-emphasis"><i class="fa-solid fa-hotel"></i> ที่พัก</a></li>
+        <li><a href="main.html" class="nav-link px-2 link-body-emphasis"><i class="fa-solid fa-house"></i> Home</a></li>
+        <li><a href="hotel.html" class="nav-link px-2 link-body-emphasis active"><i class="fa-solid fa-hotel"></i> ที่พัก</a></li>
         <a class="nav-link px-2 link-body-emphasis dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"><i class="fa-regular fa-paper-plane"></i> บริการเดินทางขนส่ง</a>
             <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="flight.html"><i class="fa-solid fa-plane"></i> ตั๋วเครื่องบิน</a></li>
@@ -65,60 +65,180 @@
       </div>
     </div>
   </div>
-</nav>   
+</nav>
 
-<!-- Slide -->
+<!-- breadcrumb -->
 <div class="container">
-    <div class="row">
-        <div class="col-12">
-            <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-indicators">
-                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                </div>
-                <!--Pic1-->
-                <div class="carousel-inner slidecurve">
-                  <div class="carousel-item active">
-                    <img src="images/slide1.png" class="d-block w-100" alt="...">
-                  </div>
-                  <!--Pic2-->
-                  <div class="carousel-item">
-                    <img src="images/slide2.png" class="d-block w-100" alt="...">
-                  </div>
-                  <!--Pic3-->
-                  <div class="carousel-item">
-                    <img src="images/slide3.png" class="d-block w-100" alt="...">
-                  </div>
-                </div>
-
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Next</span>
-                </button>
-              </div>
-        </div>
-    </div>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb breadcrumb-chevron p-3 bg-body-tertiary rounded-3">
+          <li class="breadcrumb-item">
+            <a class="link-body-emphasis fw-semibold text-decoration-none" href="main.html">
+                <i class="fa-solid fa-house"></i> Home</a>
+            </a>
+          </li>
+          <li class="breadcrumb-item">
+            <a class="link-body-emphasis fw-semibold text-decoration-none" href="hotel.html"><i class="fa-solid fa-hotel"></i> ที่พัก</a>
+          </li>
+          <li class="breadcrumb-item active" aria-current="page">
+            <i class="fa-solid fa-money-check-dollar"></i> ชำระเงิน
+          </li>
+        </ol>
+      </nav>
 </div>
 
-<!-- ที่พักแนะนำกรุงเทพ -->
-<div class="container px-4 py-5" id="hotelRecBangkok">
-  <h2 class="pb-2 border-bottom"><i class="fa-solid fa-star" style="color: #FFD43B;"></i> ที่พักแนะนำในประเทศ</h2>
-  <!-- nav -->
-  <ul class="nav nav-pills mb-2">
-    <li class="nav-item">
-      <button type="button" class="btn btn-primary me-2 normalpop" id="bangkokRecom1">กรุงเทพ</button>
-    </li>
-    <li class="nav-item">
-      <button type="button" class="btn btn-outline-primary me-2 normalpop" id="upcountryRecom1">ต่างจังหวัด</button>
-    </li>
-  </ul>
+
+<!-- alert -->
+<div class="container">
+    <div class="alert alert-success" role="alert" id="hotelPaySucc">
+        
+    </div>
+    <!-- Progress -->
+    <div class="progress" id="hotelProg0" role="progressbar" aria-label="Example with label" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+        <div class="progress-bar text-bg-primary" style="width: 10%">0%</div>
+      </div>
+      <div class="progress" id="hotelProg1" role="progressbar" aria-label="Basic example" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+        <div class="progress-bar text-bg-primary" style="width: 50%">50%</div>
+      </div>
+      <div class="progress" id="hotelProg2" role="progressbar" aria-label="Basic example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+        <div class="progress-bar text-bg-primary" style="width: 100%">100%</div>
+    </div>
+    <br>
+</div>
+
+
+<!-- Form กรอกข้อมูล -->
+<div class="container box">
+
+  <nav class="p-3 mb-3 border-bottom border-body box" style="background-color: #ffffff;">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start" >
+        <!-- menu -->
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0 nav-underline">
+          <li><a href="#" class="nav-link px-2 link-body-emphasis active"><i class="fa-solid fa-hotel"></i> ที่พัก</a></li>
+      </div>
+  </nav>   
   
-  <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-1" id="cardBangkok">
+  <form class="row g-3 needs-validation" id="infoForm" novalidate>
+    <!-- ชื่อจริง -->
+    <div class="col-md-4">
+      <label for="validationCustom01" class="form-label">ชื่อจริง</label>
+      <input type="text" class="form-control" id="hotelFName" value="" placeholder="ชื่อจริง" required>
+      <div class="valid-feedback">
+        Please insert Firstname.
+      </div>
+    </div>
+    <!-- นามสกุล -->
+    <div class="col-md-4">
+      <label for="validationCustom02" class="form-label">นามสกุล</label>
+      <input type="text" class="form-control" id="hotelLName" value="" placeholder="นามสกุล" required>
+      <div class="valid-feedback">
+        Please insert Lastname.
+      </div>
+    </div>
+    <!-- จำนวนคน -->
+    <div class="col-md-3">
+        <label for="quantity" class="form-label">จำนวน (ตั้งแต่ 1 คน ถึง 10 คน)</label>
+        <input type="number" class="form-control" id="numPerson" value="1" name="quantity" min="1" max="10">
+        <div class="invalid-feedback">
+            Please select the number of people.
+        </div>
+      </div>
+    <!-- โรงแรม -->
+    <div class="col-md-3">
+      <label for="validationCustom04" class="form-label">ที่พัก</label>
+      <select class="form-select" id="selectHotel" required>
+        <option selected disabled value="">Choose Hotel</option>
+        <option value="2500">Summit Windmill Golf Suite Hotel</option>
+        <option value="1500">Sleep Hotel Bangkok</option>
+        <option value="1000">Siam Star Hotel</option>
+        <option value="2500">Pattaya Paradise Beach Resort</option>
+        <option value="2000">The Beachfront Hotel Phuket</option>
+        <option value="1500">Centre Point Hotel Terminal21 Korat</option>
+      </select>
+      <div class="invalid-feedback">
+        Please select Hotel.
+      </div>
+    </div>
+    <!-- วันที่เช็คอิน -->
+    <div class="col-md-3">
+        <label for="birthday" class="form-label">วันที่เช็คอิน</label>
+        <input type="date" class="form-control" id="checkinDate" name="checkinDate" min="2024-04-29">
+      <div class="invalid-feedback">
+        Please select date.
+      </div>
+    </div>
+    <!-- วันที่เช็คเอาท์ -->
+    <div class="col-md-3">
+        <label for="birthday" class="form-label">วันที่เช็คเอาท์</label>
+        <input type="date" class="form-control" id="checkoutDate" name="checkoutDate" min="2024-04-29">
+      <div class="invalid-feedback">
+        Please select date.
+      </div>
+    </div>
+    <!-- ปุ่ม -->
+    <div class="col-12">
+      <button class="btn btn-primary" type="button" id="toCheckoutForm">ต่อไป</button><br><br>
+    </div>
+  </form>
+
+
+
+  <!-- Form ชำระเงิน -->
+  <form class="row g-3 needs-validation" id="checkoutForm" novalidate>
+    <!-- ราคาที่พัก -->
+    <div class="col-md-4">
+        <label for="validationCustom02" class="form-label">ราคาที่พัก</label>
+        <input class="form-control" type="text" value="" id="showHotel" aria-label="readonly input example" readonly>
+      </div>
+    <!-- จำนวนคน -->
+    <div class="col-md-4">
+        <label for="validationCustom02" class="form-label">จำนวน</label>
+        <input class="form-control" type="text" value="" id="showNumPerson" aria-label="readonly input example" readonly>
+      </div>
+    <!-- Payment -->
+    <div class="col-md-3">
+        <label for="validationCustom04" class="form-label">ช่องทางชำระเงิน</label>
+        <select class="form-select" id="hotelPayment" required>
+          <option selected disabled value="">Choose Payment Method</option>
+          <option value="Credit Card">Credit Card</option>
+          <option value="Mobile Banking">Mobile Banking</option>
+          <option value="QR Code">QR Code</option>
+          <option value="Cash">Cash</option>
+        </select>
+        <div class="invalid-feedback">
+          Please select Payment.
+        </div>
+      </div>
+    <!-- ราคารวม -->
+    <div class="col-md-4">
+        <label for="validationCustom01" class="form-label">ราคารวม (ราคาที่พัก + จำนวนคน)</label>
+        <input type="text" class="form-control" id="hotelTotal" value="" aria-label="readonly input example" readonly>
+      </div>
+    <!-- Vat -->
+    <div class="col-md-4">
+        <label for="validationCustom02" class="form-label">Vat (7%)</label>
+        <input class="form-control" type="text" value="" id="vatHotelTotal" aria-label="readonly input example" readonly>
+      </div>
+    <!-- ยอดชำระเงินรวมทั้งสิ้น -->
+    <div class="col-md-4">
+      <label for="validationCustom01" class="form-label">ยอดชำระเงินรวมทั้งสิ้น</label>
+      <input type="text" class="form-control" id="grandHotelTotal" value="" aria-label="readonly input example" readonly>
+    </div>
+    <!-- ปุ่ม -->
+    <div class="col-12">
+      <button class="btn btn-danger" type="button" id="backInfoForm">แก้ไขข้อมูล</button>
+      <button class="btn btn-primary" type="submit" id="hotelPay">ชำระเงิน</button><br><br>
+    </div>
+  </form>
+
+  </div>
+  <br>
+</div>
+
+<!-- ที่พักทั้งหมด -->
+<div class="container px-4 py-5">
+  <h2 class="pb-2 border-bottom"><i class="fa-solid fa-hotel"></i> ที่พักทั้งหมด</h2>
+  
+  <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-1">
     <!-- card1 -->
     <div class="col" data-bs-toggle="modal" data-bs-target="#bangkokModal1">
       <div class="card shadow-sm">
@@ -189,7 +309,7 @@
           </div>
           <div class="modal-footer">
             <a href="#" class="btn btn-secondary" style="--bs-btn-padding-y: 5px; --bs-btn-padding-x: 100px; --bs-btn-font-size: 20px;">ข้อมูลเพิ่มเติม</a>
-            <a href="hotelform.html" class="btn btn-primary" style="--bs-btn-padding-y: 5px; --bs-btn-padding-x: 125px; --bs-btn-font-size: 20px;">จองเลย</a>
+            <a href="hotel.html" class="btn btn-primary" style="--bs-btn-padding-y: 5px; --bs-btn-padding-x: 125px; --bs-btn-font-size: 20px;">จองเลย</a>
           </div>
         </div>
       </div>
@@ -265,7 +385,7 @@
           </div>
           <div class="modal-footer">
             <a href="#" class="btn btn-secondary" style="--bs-btn-padding-y: 5px; --bs-btn-padding-x: 100px; --bs-btn-font-size: 20px;">ข้อมูลเพิ่มเติม</a>
-            <a href="hotelform.html" class="btn btn-primary" style="--bs-btn-padding-y: 5px; --bs-btn-padding-x: 125px; --bs-btn-font-size: 20px;">จองเลย</a>
+            <a href="hotel.html" class="btn btn-primary" style="--bs-btn-padding-y: 5px; --bs-btn-padding-x: 125px; --bs-btn-font-size: 20px;">จองเลย</a>
           </div>
         </div>
       </div>
@@ -342,33 +462,13 @@
           </div>
           <div class="modal-footer">
             <a href="#" class="btn btn-secondary" style="--bs-btn-padding-y: 5px; --bs-btn-padding-x: 100px; --bs-btn-font-size: 20px;">ข้อมูลเพิ่มเติม</a>
-            <a href="hotelform.html" class="btn btn-primary" style="--bs-btn-padding-y: 5px; --bs-btn-padding-x: 125px; --bs-btn-font-size: 20px;">จองเลย</a>
+            <a href="hotel.html" class="btn btn-primary" style="--bs-btn-padding-y: 5px; --bs-btn-padding-x: 125px; --bs-btn-font-size: 20px;">จองเลย</a>
           </div>
         </div>
       </div>
     </div>
-
-  </div>
-</div>
-
-
-
-<!-- ที่พักแนะนำต่างจังหวัด -->
-<div class="container px-4 py-5" id="hotelRecUp">
-  <h2 class="pb-2 border-bottom"><i class="fa-solid fa-star" style="color: #FFD43B;"></i> ที่พักแนะนำในประเทศ</h2>
-  <!-- nav -->
-  <ul class="nav nav-pills mb-2">
-    <li class="nav-item">
-      <button type="button" class="btn btn-outline-primary me-2 normalpop" id="bangkokRecom2">กรุงเทพ</button>
-    </li>
-    <li class="nav-item">
-      <button type="button" class="btn btn-primary me-2 normalpop" id="upcountryRecom2">ต่างจังหวัด</button>
-    </li>
-  </ul>
-  
-  <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-1" id="cardUpc">
-    <!-- card1 -->
-    <div class="col" data-bs-toggle="modal" data-bs-target="#upCountryModal1">
+    <!-- card4 -->
+    <div class="col" data-bs-toggle="modal" data-bs-target="#upCountryModal4">
       <div class="card shadow-sm">
         <span class="badge text-bg-primary" style="font-size: 15px;">Pattaya</span>
         <img src="https://ik.imagekit.io/tvlk/apr-asset/dgXfoyh24ryQLRcGq00cIdKHRmotrWLNlvG-TxlcLxGkiDwaUSggleJNPRgIHCX6/hotel/asset/20063296-318cc6b3970d63e796f6c25e20fc1c8f.jpeg?_src=imagekit&tr=c-at_max,h-360,q-40,w-640" class="card-img-top cardimg" alt="...">
@@ -380,7 +480,7 @@
       </div>
     </div>
     <!-- UpcountryModal1 -->
-    <div class="modal fade" id="upCountryModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="upCountryModal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered modal-xl">
         <div class="modal-content">
           <div class="modal-header">
@@ -392,11 +492,11 @@
             <div class="container">
               <div class="row">
                   <div class="col-12 col-xl-6">
-                      <div id="carouselModalUpcountry1" class="carousel slide" data-bs-ride="carousel">
+                      <div id="carouselModalUpcountry4" class="carousel slide" data-bs-ride="carousel">
                           <div class="carousel-indicators">
-                            <button type="button" data-bs-target="#carouselModalUpcountry1" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 2"></button>
-                            <button type="button" data-bs-target="#carouselModalUpcountry1" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                            <button type="button" data-bs-target="#carouselModalUpcountry1" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                            <button type="button" data-bs-target="#carouselModalUpcountry4" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselModalUpcountry4" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselModalUpcountry4" data-bs-slide-to="2" aria-label="Slide 3"></button>
                           </div>
                           <!--Pic1-->
                           <div class="carousel-inner slidecurve">
@@ -413,11 +513,11 @@
                             </div>
                           </div>
           
-                          <button class="carousel-control-prev" type="button" data-bs-target="#carouselModalUpcountry1" data-bs-slide="prev">
+                          <button class="carousel-control-prev" type="button" data-bs-target="#carouselModalUpcountry4" data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Previous</span>
                           </button>
-                          <button class="carousel-control-next" type="button" data-bs-target="#carouselModalUpcountry1" data-bs-slide="next">
+                          <button class="carousel-control-next" type="button" data-bs-target="#carouselModalUpcountry4" data-bs-slide="next">
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Next</span>
                           </button>
@@ -438,14 +538,14 @@
           </div>
           <div class="modal-footer">
             <a href="#" class="btn btn-secondary" style="--bs-btn-padding-y: 5px; --bs-btn-padding-x: 100px; --bs-btn-font-size: 20px;">ข้อมูลเพิ่มเติม</a>
-            <a href="hotelform.html" class="btn btn-primary" style="--bs-btn-padding-y: 5px; --bs-btn-padding-x: 125px; --bs-btn-font-size: 20px;">จองเลย</a>
+            <a href="hotel.html" class="btn btn-primary" style="--bs-btn-padding-y: 5px; --bs-btn-padding-x: 125px; --bs-btn-font-size: 20px;">จองเลย</a>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- card2 -->
-    <div class="col" data-bs-toggle="modal" data-bs-target="#upCountryModal2">
+    <!-- card5 -->
+    <div class="col" data-bs-toggle="modal" data-bs-target="#upCountryModal5">
       <div class="card shadow-sm">
         <span class="badge text-bg-primary" style="font-size: 15px;">Phuket</span>
         <img src="https://ik.imagekit.io/tvlk/apr-asset/dgXfoyh24ryQLRcGq00cIdKHRmotrWLNlvG-TxlcLxGkiDwaUSggleJNPRgIHCX6/hotel/asset/20024516-884be080ca1de48f39cd8352a482c26b.png?_src=imagekit&tr=c-at_max,h-360,q-40,w-640" class="card-img-top cardimg" alt="...">
@@ -457,7 +557,7 @@
       </div>
     </div>
     <!-- UpcountryModal2 -->
-    <div class="modal fade" id="upCountryModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="upCountryModal5" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered modal-xl">
         <div class="modal-content">
           <div class="modal-header">
@@ -469,11 +569,11 @@
             <div class="container">
               <div class="row">
                   <div class="col-12 col-xl-6">
-                      <div id="carouselModalUpcountry2" class="carousel slide" data-bs-ride="carousel">
+                      <div id="carouselModalUpcountry5" class="carousel slide" data-bs-ride="carousel">
                           <div class="carousel-indicators">
-                            <button type="button" data-bs-target="#carouselModalUpcountry2" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 2"></button>
-                            <button type="button" data-bs-target="#carouselModalUpcountry2" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                            <button type="button" data-bs-target="#carouselModalUpcountry2" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                            <button type="button" data-bs-target="#carouselModalUpcountry5" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselModalUpcountry5" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselModalUpcountry5" data-bs-slide-to="2" aria-label="Slide 3"></button>
                           </div>
                           <!--Pic1-->
                           <div class="carousel-inner slidecurve">
@@ -490,11 +590,11 @@
                             </div>
                           </div>
           
-                          <button class="carousel-control-prev" type="button" data-bs-target="#carouselModalUpcountry2" data-bs-slide="prev">
+                          <button class="carousel-control-prev" type="button" data-bs-target="#carouselModalUpcountry5" data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Previous</span>
                           </button>
-                          <button class="carousel-control-next" type="button" data-bs-target="#carouselModalUpcountry2" data-bs-slide="next">
+                          <button class="carousel-control-next" type="button" data-bs-target="#carouselModalUpcountry5" data-bs-slide="next">
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Next</span>
                           </button>
@@ -514,14 +614,14 @@
           </div>
           <div class="modal-footer">
             <a href="#" class="btn btn-secondary" style="--bs-btn-padding-y: 5px; --bs-btn-padding-x: 100px; --bs-btn-font-size: 20px;">ข้อมูลเพิ่มเติม</a>
-            <a href="hotelform.html" class="btn btn-primary" style="--bs-btn-padding-y: 5px; --bs-btn-padding-x: 125px; --bs-btn-font-size: 20px;">จองเลย</a>
+            <a href="hotel.html" class="btn btn-primary" style="--bs-btn-padding-y: 5px; --bs-btn-padding-x: 125px; --bs-btn-font-size: 20px;">จองเลย</a>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- card3 -->
-    <div class="col" data-bs-toggle="modal" data-bs-target="#upCountryModal3">
+    <!-- card6 -->
+    <div class="col" data-bs-toggle="modal" data-bs-target="#upCountryModal6">
       <div class="card shadow-sm">
         <span class="badge text-bg-primary" style="font-size: 15px;">Korat </span>
         <img src="https://ik.imagekit.io/tvlk/apr-asset/dgXfoyh24ryQLRcGq00cIdKHRmotrWLNlvG-TxlcLxGkiDwaUSggleJNPRgIHCX6/hotel/asset/20043981-de744c7bfb9f91587340dbb5e2b22a99.jpeg?_src=imagekit&tr=c-at_max,h-360,q-40,w-640" class="card-img-top cardimg" alt="...">
@@ -533,7 +633,7 @@
       </div>
     </div>
     <!-- UpcountryModal3 -->
-    <div class="modal fade" id="upCountryModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="upCountryModal6" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered modal-xl">
         <div class="modal-content">
           <div class="modal-header">
@@ -545,11 +645,11 @@
             <div class="container">
               <div class="row">
                   <div class="col-12 col-xl-6">
-                      <div id="carouselModalUpcountry3" class="carousel slide" data-bs-ride="carousel">
+                      <div id="carouselModalUpcountry6" class="carousel slide" data-bs-ride="carousel">
                           <div class="carousel-indicators">
-                            <button type="button" data-bs-target="#carouselModalUpcountry3" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 2"></button>
-                            <button type="button" data-bs-target="#carouselModalUpcountry3" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                            <button type="button" data-bs-target="#carouselModalUpcountry3" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                            <button type="button" data-bs-target="#carouselModalUpcountry6" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselModalUpcountry6" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselModalUpcountry6" data-bs-slide-to="2" aria-label="Slide 3"></button>
                           </div>
                           <!--Pic1-->
                           <div class="carousel-inner slidecurve">
@@ -566,11 +666,11 @@
                             </div>
                           </div>
           
-                          <button class="carousel-control-prev" type="button" data-bs-target="#carouselModalUpcountry3" data-bs-slide="prev">
+                          <button class="carousel-control-prev" type="button" data-bs-target="#carouselModalUpcountry6" data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Previous</span>
                           </button>
-                          <button class="carousel-control-next" type="button" data-bs-target="#carouselModalUpcountry3" data-bs-slide="next">
+                          <button class="carousel-control-next" type="button" data-bs-target="#carouselModalUpcountry6" data-bs-slide="next">
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Next</span>
                           </button>
@@ -590,7 +690,7 @@
           </div>
           <div class="modal-footer">
             <a href="#" class="btn btn-secondary" style="--bs-btn-padding-y: 5px; --bs-btn-padding-x: 100px; --bs-btn-font-size: 20px;">ข้อมูลเพิ่มเติม</a>
-            <a href="hotelform.html" class="btn btn-primary" style="--bs-btn-padding-y: 5px; --bs-btn-padding-x: 125px; --bs-btn-font-size: 20px;">จองเลย</a>
+            <a href="hotel.html" class="btn btn-primary" style="--bs-btn-padding-y: 5px; --bs-btn-padding-x: 125px; --bs-btn-font-size: 20px;">จองเลย</a>
           </div>
         </div>
       </div>
@@ -598,8 +698,6 @@
 
   </div>
 </div>
-
-
 
 <!-- Footer -->
 <h6 class="border-bottom"></h6>
@@ -622,6 +720,6 @@
 
   </footer>
 </div>
-
+    
 </body>
 </html>

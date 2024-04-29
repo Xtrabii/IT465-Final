@@ -5,3 +5,33 @@
 .slidecurve{
     border-radius: 10px;
 }
+
+.cardimg{
+    width: 150px;
+    height: 250px;
+}
+
+.modalslideimg{
+    width: 150px;
+    height: 380px;
+}
+
+.normalpop{
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.normalpop:hover{
+    transform: scale(1.03);
+}
+
+.center{
+    justify-content: center;
+    text-align: center;
+}
+
+.box{
+    border: 1px solid rgb(230, 229, 229);
+    border-radius: 10px;
+    box-sizing: border-box;
+}
