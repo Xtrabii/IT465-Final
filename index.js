@@ -128,4 +128,104 @@ $(document).ready(function(){
         
       });
 
+
+
+      // Form ตั๋วเครื่องบิน
+      $("#checkoutFlightForm").hide();
+
+      // Alert ตอนชำระเงินเสร็จ
+      $("#flightPaySucc").hide();
+
+      // breadcrumb
+      $("#brcFlightInfo").hide();
+      $("#brcFlightDisPay").hide();
+      $("#brcFlightPaySuc").hide();
+      $("#brcFlightPay").hide();
+     
+      // ปุ่มกดเพื่อไปหน้าชำระเงิน
+      $("#toCheckoutFlightForm").click(function(){
+        var sFlight = $("#selectFlight").val();
+        var sPerson = $("#numFlightPerson").val();
+        var hTotal = sFlight * sPerson;
+        var vTotal = hTotal * 7/100;
+        var gTotal = vTotal + hTotal;
+
+        $("#infoFlightForm").fadeOut();
+        $("#infoFlightForm").hide();
+        $("#checkoutFlightForm").fadeIn();
+        $("#checkoutFlightForm").show();
+
+        // หลอด Progress
+        $("#flightProg").css("width", "50%");
+
+        $("#showFlight").val(sFlight + " บาท");
+        $("#showNumFlightPerson").val(sPerson + " คน");
+        $("#flightTotal").val(hTotal + " บาท");
+        $("#vatFlightTotal").val(vTotal + " บาท");
+        $("#grandFlightTotal").val(gTotal + " บาท");
+        // breadcrumb
+        $("#brcFlightDisInfo").fadeOut();
+        $("#brcFlightDisInfo").hide();
+        $("#brcFlightInfo").fadeIn();
+        $("#brcFlightInfo").show();
+        $("#brcFlightDisPay").fadeIn();
+        $("#brcFlightDisPay").show();
+      });
+
+      // กดย้อนกลับไปแก้ไขข้อมูล
+      $("#backInfoFlightForm").click(function(){
+        $("#checkoutFlightForm").fadeOut();
+        $("#checkoutFlightForm").hide();
+        $("#infoFlightForm").fadeIn();
+        $("#infoFlightForm").show();
+        
+        // หลอด Progress
+        $("#flightProg").css("width", "0%");
+        // breadcrumb
+        $("#brcFlightDisInfo").fadeOut();
+        $("#brcFlightDisInfo").show();
+        $("#brcFlightInfo").fadeIn();
+        $("#brcFlightInfo").hide();
+        $("#brcFlightDisPay").fadeIn();
+        $("#brcFlightDisPay").hide();
+      });
+      // กดจ่ายเงิน
+      $("#flightPay").click(function(){
+        var fName = $("#flightFName").val();
+        var lName = $("#flightLName").val();
+        var flightPay = $("#flightPayment").val();
+        var grandFlightTotal = $("#grandFlightTotal").val();
+        var checkInFlightDate = $("#checkinFlightDate").val();
+        // ซ่อนฟอร์ม
+        $("#checkoutFlightForm").fadeOut();
+        $("#checkoutFlightForm").hide();
+
+        // alert
+        $("#flightPaySucc").html("<i class='fa-regular fa-circle-check'></i> คุณ : " + fName + " " + lName + " / ชำระเงินด้วย : " + flightPay + " / ยอดชำระรวมทั้งสิ้น : " + grandFlightTotal + " / สามารถเช็คอินได้ในวันที่ (ปี/เดือน/วัน) : " + checkInFlightDate);
+        $("#flightPaySucc").fadeOut();
+        $("#flightPaySucc").fadeIn();
+        $("#flightPaySucc").fadeOut();
+        $("#flightPaySucc").fadeIn();
+        // หลอด Progress
+        $("#flightProg").css("width", "100%");
+        // breadcrumb
+        $("#brcFlightDisPay").fadeOut();
+        $("#brcFlightDisPay").hide();
+        $("#brcFlightPay").fadeIn();
+        $("#brcFlightPay").show();
+        $("#brcFlightPaySuc").fadeIn();
+        $("#brcFlightPaySuc").show();
+
+        Swal.fire({
+          icon: "success",
+          title: 'คุณ ' + fName + ' ได้ชำระเงินเรียบร้อย!',
+          imageUrl: "https://th.bing.com/th/id/R.f1a16a78c62fe3c2c19d405ef8b1dde1?rik=uchT5UxvyYszow&pid=ImgRaw&r=0",
+          imageWidth: 200,
+          imageHeight: 200,
+          imageAlt: "Custom image",
+          timer: 3000,
+        });
+        
+      });
+
   });

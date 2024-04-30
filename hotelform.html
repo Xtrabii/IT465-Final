@@ -41,17 +41,7 @@
             <li><a class="dropdown-item" href="airport.html"><i class="fa-solid fa-taxi"></i> บริการรับส่งสนามบิน</a></li>
             <li><a class="dropdown-item" href="carrental.html"><i class="fa-solid fa-car"></i> บริการเช่ารถ</a></li>
             </ul>
-        <li><a href="esim.html" class="nav-link px-2 link-body-emphasis"><i class="fa-solid fa-sim-card"></i> eSIM(ซิมดิจิทัล)</a></li>
         <li><a href="activity.html" class="nav-link px-2 link-body-emphasis"><i class="fa-solid fa-map-location-dot"></i> กิจกรรม</a></li>
-        <a class="nav-link px-2 link-body-emphasis dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"><i class="fa-solid fa-percent"></i> โปรโมชั่น</a>
-            <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="flight+hotel.html"><i class="fa-solid fa-plane-circle-check"></i> ที่พัก+ตั๋วเครื่องบิน</a></li>
-            <li><a class="dropdown-item" href="security.html"><i class="fa-solid fa-car-burst"></i> ประกันการเดินทาง</a></li>
-            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-train-subway"></i> #</a></li>
-            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-ferry"></i> #</a></li>
-            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-taxi"></i> #</a></li>
-            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-car"></i> #</a></li>
-            </ul>
       </ul>
       
       <!-- Currency -->
@@ -78,6 +68,9 @@
           </li>
           <li class="breadcrumb-item">
             <a class="link-body-emphasis fw-semibold text-decoration-none" href="hotel.html"><i class="fa-solid fa-hotel"></i> ที่พัก</a>
+          </li>
+          <li class="breadcrumb-item">
+            <a class="link-body-emphasis fw-semibold text-decoration-none" href="#"><i class="fa-solid fa-hotel"></i> จองที่พัก</a>
           </li>
           <li class="breadcrumb-item active" aria-current="page" id="brcHotelDisInfo">
             <i class="fa-solid fa-circle-info"></i> กรอกข้อมูล
@@ -121,7 +114,7 @@
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start" >
         <!-- menu -->
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0 nav-underline">
-          <li><a href="#" class="nav-link px-2 link-body-emphasis active"><i class="fa-solid fa-hotel"></i> ที่พัก</a></li>
+          <li><a href="#" class="nav-link px-2 link-body-emphasis active"><i class="fa-solid fa-hotel"></i> จองที่พัก</a></li>
       </div>
   </nav>   
   
@@ -129,7 +122,7 @@
     <!-- ชื่อจริง -->
     <div class="col-md-4">
       <label for="validationCustom01" class="form-label">ชื่อจริง</label>
-      <input type="text" class="form-control" id="hotelFName" value="" placeholder="ชื่อจริง" required>
+      <input type="text" class="form-control" id="hotelFName" value="" placeholder="ชื่อจริง(ไม่ต้องมีคำนำหน้า)" required>
       <div class="valid-feedback">
         Please insert Firstname.
       </div>
@@ -183,7 +176,7 @@
       </div>
     </div>
     <!-- ปุ่ม -->
-    <div class="col-12">
+    <div class="col-12" style="text-align:right;">
       <button class="btn btn-primary" type="button" id="toCheckoutForm">ต่อไป</button><br><br>
     </div>
   </form>
@@ -232,9 +225,9 @@
       <input type="text" class="form-control" id="grandHotelTotal" value="" aria-label="readonly input example" readonly>
     </div>
     <!-- ปุ่ม -->
-    <div class="col-12">
-      <button class="btn btn-danger" type="button" id="backInfoForm">แก้ไขข้อมูล</button>
-      <button class="btn btn-primary" type="button" id="hotelPay">ชำระเงิน</button><br><br>
+    <div class="col-12" style="text-align:right;">
+      <button class="btn btn-danger me-2" type="button" id="backInfoForm">แก้ไขข้อมูล</button>
+      <button class="btn btn-primary me-2" type="button" id="hotelPay">ชำระเงิน</button><br><br>
     </div>
   </form>
 
@@ -634,7 +627,7 @@
         <span class="badge text-bg-primary" style="font-size: 15px;">Korat </span>
         <img src="https://ik.imagekit.io/tvlk/apr-asset/dgXfoyh24ryQLRcGq00cIdKHRmotrWLNlvG-TxlcLxGkiDwaUSggleJNPRgIHCX6/hotel/asset/20043981-de744c7bfb9f91587340dbb5e2b22a99.jpeg?_src=imagekit&tr=c-at_max,h-360,q-40,w-640" class="card-img-top cardimg" alt="...">
         <div class="card-body">
-          <h5><b>เซนเตอร์พอยต์โฮเทล เทอมินอล 21</b></h5>
+          <h5><b>Centre Point Hotel Terminal21 Korat</b></h5>
           <p class="card-text">4.8 ⭐⭐⭐⭐(1058)</p>
           <p class="card-text"><b>THB 1,500</b></p>
         </div>
@@ -645,7 +638,7 @@
       <div class="modal-dialog modal-dialog-centered modal-xl">
         <div class="modal-content">
           <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">เซนเตอร์พอยต์โฮเทล เทอมินอล 21 โคราช </h1>
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Centre Point Hotel Terminal21 Korat </h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
@@ -686,7 +679,7 @@
                   </div>
                   <!-- info -->
                   <div class="col-12 col-xl-6">
-                    <h4>เซนเตอร์พอยต์โฮเทล เทอมินอล 21 โคราช </h4>
+                    <h4>Centre Point Hotel Terminal21 Korat </h4>
                     <span class="badge rounded-pill text-bg-primary">โรงแรม</span><p class="card-text">4.8 ⭐⭐⭐⭐(1058)</p>
                     <small class="text-body-secondary">Centre Point Hotel Terminal21 Korat </small>
                     <p><i class="fa-solid fa-location-dot"></i> 99 ถ.มิตรภาพ ต.ในเมือง, ในเมือง, อำเภอเมืองนครราชสีมา, นครราชสีมา, ประเทศไทย, 30000 <a href="https://maps.app.goo.gl/4HMi1PmMLbgKhGtcA" target = "blank">แผนที่</a></p><br><br><br>
