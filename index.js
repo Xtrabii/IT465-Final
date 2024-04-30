@@ -32,12 +32,17 @@ $(document).ready(function(){
 
       // Form ที่พัก
       $("#checkoutForm").hide();
+
       // Alert ตอนชำระเงินเสร็จ
       $("#hotelPaySucc").hide();
-      // หลอด Progress
-      $("#hotelProg1").hide();
-      $("#hotelProg2").hide();
 
+      // breadcrumb
+      $("#brcHotelInfo").hide();
+      $("#brcHotelDisPay").hide();
+      $("#brcHotelPaySuc").hide();
+      $("#brcHotelPay").hide();
+     
+      // ปุ่มกดเพื่อไปหน้าชำระเงิน
       $("#toCheckoutForm").click(function(){
         var sHotel = $("#selectHotel").val();
         var sPerson = $("#numPerson").val();
@@ -49,29 +54,34 @@ $(document).ready(function(){
         $("#infoForm").hide();
         $("#checkoutForm").fadeIn();
         $("#checkoutForm").show();
+
         // หลอด Progress
-        $("#hotelProg0").fadeOut();
-        $("#hotelProg0").hide();
-        $("#hotelProg1").fadeIn();
-        $("#hotelProg1").show();
+        $("#hotelProg").css("width", "50%");
 
         $("#showHotel").val(sHotel + " บาท");
         $("#showNumPerson").val(sPerson + " คน");
         $("#hotelTotal").val(hTotal + " บาท");
         $("#vatHotelTotal").val(vTotal + " บาท");
         $("#grandHotelTotal").val(gTotal + " บาท");
+        // breadcrumb
+        $("#brcHotelDisInfo").hide();
+        $("#brcHotelInfo").show();
+        $("#brcHotelDisPay").show();
       });
+
       // กดย้อนกลับไปแก้ไขข้อมูล
       $("#backInfoForm").click(function(){
         $("#checkoutForm").fadeOut();
         $("#checkoutForm").hide();
         $("#infoForm").fadeIn();
         $("#infoForm").show();
+        
         // หลอด Progress
-        $("#hotelProg1").fadeOut();
-        $("#hotelProg1").hide();
-        $("#hotelProg0").fadeIn();
-        $("#hotelProg0").show();
+        $("#hotelProg").css("width", "0%");
+        // breadcrumb
+        $("#brcHotelDisInfo").show();
+        $("#brcHotelInfo").hide();
+        $("#brcHotelDisPay").hide();
       });
       // กดจ่ายเงิน
       $("#hotelPay").click(function(){
@@ -79,17 +89,33 @@ $(document).ready(function(){
         var lName = $("#hotelLName").val();
         var hotelPay = $("#hotelPayment").val();
         var grandHotelTotal = $("#grandHotelTotal").val();
+        // ซ่อนฟอร์ม
+        $("#checkoutForm").fadeOut();
+        $("#checkoutForm").hide();
 
+        // alert
         $("#hotelPaySucc").html("<i class='fa-regular fa-circle-check'></i> คุณ : " + fName + " " + lName + " / ชำระเงินด้วย : " + hotelPay + " / ยอดชำระรวมทั้งสิ้น : " + grandHotelTotal);
         $("#hotelPaySucc").fadeOut();
         $("#hotelPaySucc").fadeIn();
         $("#hotelPaySucc").fadeOut();
         $("#hotelPaySucc").fadeIn();
         // หลอด Progress
-        $("#hotelProg1").fadeOut();
-        $("#hotelProg1").hide();
-        $("#hotelProg2").fadeIn();
-        $("#hotelProg2").show();
+        $("#hotelProg").css("width", "100%");
+
+        $("#brcHotelDisPay").hide();
+        $("#brcHotelPay").show();
+        $("#brcHotelPaySuc").show();
+
+        Swal.fire({
+          icon: "success",
+          title: "Payment Completed! , Thank You",
+          imageUrl: "https://th.bing.com/th/id/R.f1a16a78c62fe3c2c19d405ef8b1dde1?rik=uchT5UxvyYszow&pid=ImgRaw&r=0",
+          imageWidth: 200,
+          imageHeight: 200,
+          imageAlt: "Custom image",
+          timer: 3000,
+        });
+        
       });
 
   });

@@ -79,8 +79,22 @@
           <li class="breadcrumb-item">
             <a class="link-body-emphasis fw-semibold text-decoration-none" href="hotel.html"><i class="fa-solid fa-hotel"></i> ที่พัก</a>
           </li>
-          <li class="breadcrumb-item active" aria-current="page">
-            <i class="fa-solid fa-money-check-dollar"></i> ชำระเงิน
+          <li class="breadcrumb-item active" aria-current="page" id="brcHotelDisInfo">
+            <i class="fa-solid fa-circle-info"></i> กรอกข้อมูล
+          </li>
+          <li class="breadcrumb-item" id="brcHotelInfo">
+            <a class="link-body-emphasis fw-semibold text-decoration-none" href="#">
+              <i class="fa-solid fa-circle-info"></i> กรอกข้อมูล</a>
+          </li>
+          <li class="breadcrumb-item active" aria-current="page" id="brcHotelDisPay"> 
+            <i class="fa-solid fa-money-bill-wave"></i> ชำระเงิน 
+          </li>
+          <li class="breadcrumb-item" id="brcHotelPay">
+            <a class="link-body-emphasis fw-semibold text-decoration-none" href="#">
+              <i class="fa-solid fa-circle-info"></i> ชำระเงิน</a>
+          </li>
+          <li class="breadcrumb-item active" aria-current="page" id="brcHotelPaySuc"> 
+            <i class="fa-solid fa-square-check"></i> ชำระเงินเสร็จสิ้น
           </li>
         </ol>
       </nav>
@@ -93,14 +107,8 @@
         
     </div>
     <!-- Progress -->
-    <div class="progress" id="hotelProg0" role="progressbar" aria-label="Example with label" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
-        <div class="progress-bar text-bg-primary" style="width: 10%">0%</div>
-      </div>
-      <div class="progress" id="hotelProg1" role="progressbar" aria-label="Basic example" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
-        <div class="progress-bar text-bg-primary" style="width: 50%">50%</div>
-      </div>
-      <div class="progress" id="hotelProg2" role="progressbar" aria-label="Basic example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-        <div class="progress-bar text-bg-primary" style="width: 100%">100%</div>
+    <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+        <div class="progress-bar text-bg-primary" id="hotelProg" style="width: 0%"></div>
     </div>
     <br>
 </div>
@@ -226,7 +234,7 @@
     <!-- ปุ่ม -->
     <div class="col-12">
       <button class="btn btn-danger" type="button" id="backInfoForm">แก้ไขข้อมูล</button>
-      <button class="btn btn-primary" type="submit" id="hotelPay">ชำระเงิน</button><br><br>
+      <button class="btn btn-primary" type="button" id="hotelPay">ชำระเงิน</button><br><br>
     </div>
   </form>
 
