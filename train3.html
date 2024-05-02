@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Every Where | Form Flight Business</title>
+    <title>Every Where | Train Bed</title>
 
     <!--custom css-->
     <link rel="stylesheet" href="css/style.css">
@@ -57,6 +57,8 @@
   </div>
 </nav>
 
+
+
 <!-- breadcrumb -->
 <div class="container">
     <nav aria-label="breadcrumb">
@@ -67,10 +69,10 @@
             </a>
           </li>
           <li class="breadcrumb-item">
-            <a class="link-body-emphasis fw-semibold text-decoration-none" href="flight.html"><i class="fa-solid fa-plane"></i> ตั๋วเครื่องบิน</a>
+            <a class="link-body-emphasis fw-semibold text-decoration-none" href="flight.html"><i class="fa-solid fa-train-subway"></i> ตั๋วรถไฟ</a>
           </li>
           <li class="breadcrumb-item">
-            <a class="link-body-emphasis fw-semibold text-decoration-none" href="#"><i class="fa-solid fa-plane"></i> เลือกเที่ยวบิน</a>
+            <a class="link-body-emphasis fw-semibold text-decoration-none" href="#"><i class="fa-solid fa-train-subway"></i> เลือกเที่ยวรถไฟ</a>
           </li>
           <li class="breadcrumb-item active" aria-current="page" id="brcFlightDisInfo">
             <i class="fa-solid fa-circle-info"></i> รายละเอียดการติดต่อ
@@ -120,9 +122,9 @@
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start" >
         <!-- menu -->
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0 nav-underline">
-          <li><a href="flightform1.html" class="nav-link px-2 link-body-emphasis"><i class="fa-solid fa-plane"></i> จองตั๋วเครื่องบิน ชั้นประหยัด</a></li>
-          <li><a href="#" class="nav-link px-2 link-body-emphasis active"><i class="fa-solid fa-plane"></i> จองตั๋วเครื่องบิน ชั้นธุรกิจ</a></li>
-          <li><a href="flightform3.html" class="nav-link px-2 link-body-emphasis"><i class="fa-solid fa-plane"></i> จองตั๋วเครื่องบิน ชั้นหนึ่ง</a></li>
+          <li><a href="train.html" type="button" id="trainNoCon" class="nav-link px-2 link-body-emphasis"><i class="fa-solid fa-train-subway"></i> จองตั๋รถไฟไม่มีแอร์</a></li>
+          <li><a href="train2.html" type="button" id="trainCon" class="nav-link px-2 link-body-emphasis"><i class="fa-solid fa-train-subway"></i> จองตั๋รถไฟมีแอร์</a></li>
+          <li><a href="#" type="button" id="trainBed" class="nav-link px-2 link-body-emphasis active"><i class="fa-solid fa-train-subway"></i> จองตั๋รถไฟตู้นอน</a></li>
       </div>
   </nav>   
   
@@ -164,16 +166,18 @@
     <div class="col-md-3">
       <label for="validationCustom04" class="form-label">จาก-ไป</label>
       <select class="form-select" id="selectFlight" required>
-        <option selected disabled value="">Choose Flight </option>
-        <option value="10000">กรุงเทพ - ชลบุรี</option>
-        <option value="15000">กรุงเทพ - โคราช</option>
-        <option value="30000">กรุงเทพ - ภูเก็ต</option>
-        <option value="20000">โคราช - กรุงเทพ</option>
-        <option value="35000">ภูเก็ต - กรุงเทพ</option>
-        <option value="15000">ชลบุรี - กรุงเทพ</option>
+        <option selected disabled value="">Choose Train </option>
+        <option value="1000">กรุงเทพ - ชลบุรี</option>
+        <option value="1300">กรุงเทพ - โคราช</option>
+        <option value="1400">กรุงเทพ - ประจวบคีรีขันธ์</option>
+        <option value="1500">กรุงเทพ - เชียงใหม่</option>
+        <option value="1350">โคราช - กรุงเทพ</option>
+        <option value="1450">ประจวบคีรีขันธ์ - กรุงเทพ</option>
+        <option value="1550">เชียงใหม่ - กรุงเทพ</option>
+        <option value="1050">ชลบุรี - กรุงเทพ</option>
       </select>
       <div class="invalid-feedback">
-        Please select Flight.
+        Please select Train.
       </div>
     </div>
     <!-- จำนวนคน -->
@@ -262,17 +266,17 @@
         <thead>
           <tr>
             <th style="width: 34%;"></th>
-            <th style="width: 22%;">ชั้นประหยัด</th>
-            <th style="width: 22%;">ชั้นธุรกิจ</th>
-            <th style="width: 22%;">ชั้นหนึ่ง</th>
+            <th style="width: 22%;">ไม่มีแอร์</th>
+            <th style="width: 22%;">มีแอร์</th>
+            <th style="width: 22%;">ตู้นอน</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <th scope="row" class="text-start">ราคาเริ่มต้น</th>
-            <td>2,000 THB</td>
-            <td>10,000 THB</td>
-            <td>50,000 THB</td>
+            <td>100 THB</td>
+            <td>400 THB</td>
+            <td>1,000 THB</td>
           </tr>
           <tr>
             <th scope="row" class="text-start">บริการอาหาร</th>
@@ -280,12 +284,7 @@
             <td><i class="fa-solid fa-check"></i></td>
             <td><i class="fa-solid fa-check"></i></td>
           </tr>
-          <tr>
-            <th scope="row" class="text-start">ขนสัมภาระได้เกินมาตรฐาน</th>
-            <td></td>
-            <td><i class="fa-solid fa-check"></i></td>
-            <td><i class="fa-solid fa-check"></i></td>
-          </tr>
+ 
         </tbody>
 
         <tbody>
@@ -293,12 +292,6 @@
             <th scope="row" class="text-start">Wi-Fi</th>
             <td></td>
             <td><i class="fa-solid fa-check"></i></td>
-            <td><i class="fa-solid fa-check"></i></td>
-          </tr>
-          <tr>
-            <th scope="row" class="text-start">สิทธิพิเศษ</th>
-            <td></td>
-            <td></td>
             <td><i class="fa-solid fa-check"></i></td>
           </tr>
         </tbody>

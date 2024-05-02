@@ -67,10 +67,10 @@
             </a>
           </li>
           <li class="breadcrumb-item">
-            <a class="link-body-emphasis fw-semibold text-decoration-none" href="flight.html"><i class="fa-solid fa-plane"></i> ตั๋วเครื่องบิน</a></a>
+            <a class="link-body-emphasis fw-semibold text-decoration-none" href="flight.html"><i class="fa-solid fa-plane"></i> ตั๋วเครื่องบิน</a>
           </li>
           <li class="breadcrumb-item">
-            <a class="link-body-emphasis fw-semibold text-decoration-none" href="#"><i class="fa-solid fa-plane"></i> เลือกเที่ยวบิน</a></a>
+            <a class="link-body-emphasis fw-semibold text-decoration-none" href="#"><i class="fa-solid fa-plane"></i> เลือกเที่ยวบิน</a>
           </li>
           <li class="breadcrumb-item active" aria-current="page" id="brcFlightDisInfo">
             <i class="fa-solid fa-circle-info"></i> รายละเอียดการติดต่อ
@@ -93,6 +93,12 @@
       </nav>
 </div>
 
+<!-- Promo Alert -->
+<div class="container">
+  <div class="alert alert-info" role="alert" id="proAlertFlight">
+    !!! Promotion Lowseason 20% Discount
+  </div>
+</div>
 
 <!-- alert -->
 <div class="container">
@@ -115,6 +121,8 @@
         <!-- menu -->
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0 nav-underline">
           <li><a href="#" class="nav-link px-2 link-body-emphasis active"><i class="fa-solid fa-plane"></i> จองตั๋วเครื่องบิน ชั้นประหยัด</a></li>
+          <li><a href="flightform2.html" class="nav-link px-2 link-body-emphasis"><i class="fa-solid fa-plane"></i> จองตั๋วเครื่องบิน ชั้นธุรกิจ</a></li>
+          <li><a href="flightform3.html" class="nav-link px-2 link-body-emphasis"><i class="fa-solid fa-plane"></i> จองตั๋วเครื่องบิน ชั้นหนึ่ง</a></li>
       </div>
   </nav>   
   
@@ -222,12 +230,12 @@
     <div class="col-md-4">
         <label for="validationCustom01" class="form-label">ราคารวม (ราคาที่นั่ง * จำนวนคน)</label>
         <input type="text" class="form-control" id="flightTotal" value="" aria-label="readonly input example" readonly>
-      </div>
-    <!-- Vat -->
+    </div>
+    <!-- Promotion Lowseason 20% Discount -->
     <div class="col-md-4">
-        <label for="validationCustom02" class="form-label">Vat (7%)</label>
-        <input class="form-control" type="text" value="" id="vatFlightTotal" aria-label="readonly input example" readonly>
-      </div>
+      <label for="validationCustom02" class="form-label">Promotion Lowseason 20% Discount</label>
+      <input class="form-control" type="text" value="" id="proFlightTotal" aria-label="readonly input example" readonly>
+    </div>
     <!-- ยอดชำระเงินรวมทั้งสิ้น -->
     <div class="col-md-4">
       <label for="validationCustom01" class="form-label">ยอดชำระเงินรวมทั้งสิ้น</label>
@@ -246,6 +254,60 @@
 
 
 
+<div class="container">
+  <h2 class="display-6 text-center mb-4">Compare plans</h2>
+
+    <div class="table-responsive">
+      <table class="table text-center">
+        <thead>
+          <tr>
+            <th style="width: 34%;"></th>
+            <th style="width: 22%;">ชั้นประหยัด</th>
+            <th style="width: 22%;">ชั้นธุรกิจ</th>
+            <th style="width: 22%;">ชั้นหนึ่ง</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row" class="text-start">ราคาเริ่มต้น</th>
+            <td>2,000 THB</td>
+            <td>10,000 THB</td>
+            <td>50,000 THB</td>
+          </tr>
+          <tr>
+            <th scope="row" class="text-start">บริการอาหาร</th>
+            <td></td>
+            <td><i class="fa-solid fa-check"></i></td>
+            <td><i class="fa-solid fa-check"></i></td>
+          </tr>
+          <tr>
+            <th scope="row" class="text-start">ขนสัมภาระได้เกินมาตรฐาน</th>
+            <td></td>
+            <td><i class="fa-solid fa-check"></i></td>
+            <td><i class="fa-solid fa-check"></i></td>
+          </tr>
+        </tbody>
+
+        <tbody>
+          <tr>
+            <th scope="row" class="text-start">Wi-Fi</th>
+            <td></td>
+            <td><i class="fa-solid fa-check"></i></td>
+            <td><i class="fa-solid fa-check"></i></td>
+          </tr>
+          <tr>
+            <th scope="row" class="text-start">สิทธิพิเศษ</th>
+            <td></td>
+            <td></td>
+            <td><i class="fa-solid fa-check"></i></td>
+          </tr>
+        </tbody>
+
+      </table>
+    </div>
+</div>
+
+
 <!-- Footer -->
 <h6 class="border-bottom"></h6>
 <div class="container">
@@ -259,10 +321,10 @@
 
     <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
       <li class="nav-item"><a href="main.html" class="nav-link px-2 text-body-secondary">Home</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Features</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Pricing</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">FAQs</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">About</a></li>
+      <li class="nav-item"><a href="memberpro.html" class="nav-link px-2 text-body-secondary">Features</a></li>
+      <li class="nav-item"><a href="memberpro.html" class="nav-link px-2 text-body-secondary">Pricing</a></li>
+      <li class="nav-item"><a href="memberpro.html" class="nav-link px-2 text-body-secondary">FAQs</a></li>
+      <li class="nav-item"><a href="memberpro.html" class="nav-link px-2 text-body-secondary">About</a></li>
     </ul>
 
   </footer>
