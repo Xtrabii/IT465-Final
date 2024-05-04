@@ -41,12 +41,35 @@ $(document).ready(function(){
       $("#brcHotelDisPay").hide();
       $("#brcHotelPaySuc").hide();
       $("#brcHotelPay").hide();
-     
+
+      $("#checkOutDateForm").hide();
+    
+    // เมื่อมีการเปลี่ยนแปลงในฟอร์ม
+    $("#checkinDate, #stayDuration").on("change", function(){
+        // ดึงข้อมูลจากฟอร์ม
+        var checkinDate = new Date($("#checkinDate").val());
+        var stayDuration = parseInt($("#stayDuration").val());
+        
+        // คำนวณวันที่เช็คเอ้าท์
+        var checkoutDate = new Date(checkinDate.getTime() + stayDuration * 24 * 60 * 60 * 1000);
+        
+        // แสดงผลลัพธ์
+        var checkoutDay = checkoutDate.getDate();
+        var checkoutMonth = checkoutDate.getMonth() + 1;
+        var checkoutYear = checkoutDate.getFullYear();
+        var formattedCheckoutDate = checkoutDay + '/' + checkoutMonth + '/' + checkoutYear;
+        $("#checkOutDate").text(formattedCheckoutDate);
+        
+        // แสดงฟอร์ม checkout เมื่อเลือกวันที่เช็คอินแล้ว
+        $("#checkOutDateForm").fadeIn();
+        $("#checkOutDateForm").show();
+      });
+
       // ปุ่มกดเพื่อไปหน้าชำระเงิน
       $("#toCheckoutForm").click(function(){
         var sHotel = $("#selectHotel").val();
-        var sPerson = $("#numPerson").val();
-        var hTotal = sHotel * sPerson;
+        var sDuration = $("#stayDuration").val();
+        var hTotal = sHotel * sDuration;
         var vTotal = hTotal * 7/100;
         var gTotal = vTotal + hTotal;
 
@@ -59,7 +82,7 @@ $(document).ready(function(){
         $("#hotelProg").css("width", "50%");
 
         $("#showHotel").val(sHotel + " บาท");
-        $("#showNumPerson").val(sPerson + " คน");
+        $("#showStayDuration").val(sDuration + " วัน");
         $("#hotelTotal").val(hTotal + " บาท");
         $("#vatHotelTotal").val(vTotal + " บาท");
         $("#grandHotelTotal").val(gTotal + " บาท");
@@ -96,6 +119,7 @@ $(document).ready(function(){
         var hotelPay = $("#hotelPayment").val();
         var grandHotelTotal = $("#grandHotelTotal").val();
         var checkInDate = $("#checkinDate").val();
+        var numDate = $("#stayDuration").val();
         // ซ่อนฟอร์ม
         $("#checkoutForm").fadeOut();
         $("#checkoutForm").hide();

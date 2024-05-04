@@ -15,6 +15,7 @@
     <!-- jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="index.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- swal2 -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
@@ -135,14 +136,6 @@
         Please insert Lastname.
       </div>
     </div>
-    <!-- จำนวนคน -->
-    <div class="col-md-3">
-        <label for="quantity" class="form-label">จำนวน (ตั้งแต่ 1 คน ถึง 10 คน)</label>
-        <input type="number" class="form-control" id="numPerson" value="1" name="quantity" min="1" max="10">
-        <div class="invalid-feedback">
-            Please select the number of people.
-        </div>
-      </div>
     <!-- โรงแรม -->
     <div class="col-md-3">
       <label for="validationCustom04" class="form-label">ที่พัก</label>
@@ -162,18 +155,23 @@
     <!-- วันที่เช็คอิน -->
     <div class="col-md-3">
         <label for="birthday" class="form-label">วันที่เช็คอิน</label>
-        <input type="date" class="form-control" id="checkinDate" name="checkinDate" min="2024-05-1">
+        <input type="date" class="form-control" id="checkinDate" name="checkinDate" min="2024-05-1" required>
       <div class="invalid-feedback">
-        Please select date.
+        Please select checkin date.
       </div>
     </div>
-    <!-- วันที่เช็คเอาท์ -->
+    <!-- จำนวนวันที่พัก -->
     <div class="col-md-3">
-        <label for="birthday" class="form-label">วันที่เช็คเอาท์</label>
-        <input type="date" class="form-control" id="checkoutDate" name="checkoutDate" min="2024-05-2">
+      <label for="quantity" class="form-label">จำนวนวันที่พัก (จองได้สูงสุด 30 วัน)</label>
+      <input type="number" class="form-control" id="stayDuration" value="1" name="stayDuration" min="1" max="30" required>
       <div class="invalid-feedback">
-        Please select date.
+          Please select the number of days of stay.
       </div>
+    </div>
+    <!-- วันที่เช็คเอ้าท์ -->
+    <div class="col-md-3" id="checkOutDateForm">
+      <label for="checkOutDate" class="form-label">วันที่เช็คเอ้าท์</label>
+      <span id="checkOutDate" class="form-control" value=""></span>
     </div>
     <!-- ปุ่ม -->
     <div class="col-12" style="text-align:right;">
@@ -190,10 +188,10 @@
         <label for="validationCustom02" class="form-label">ราคาที่พัก</label>
         <input class="form-control" type="text" value="" id="showHotel" aria-label="readonly input example" readonly>
       </div>
-    <!-- จำนวนคน -->
+    <!-- จำนวนวันที่พัก -->
     <div class="col-md-4">
-        <label for="validationCustom02" class="form-label">จำนวน</label>
-        <input class="form-control" type="text" value="" id="showNumPerson" aria-label="readonly input example" readonly>
+        <label for="validationCustom02" class="form-label">จำนวนวันที่พัก</label>
+        <input class="form-control" type="text" value="" id="showStayDuration" aria-label="readonly input example" readonly>
       </div>
     <!-- Payment -->
     <div class="col-md-3">
@@ -211,7 +209,7 @@
       </div>
     <!-- ราคารวม -->
     <div class="col-md-4">
-        <label for="validationCustom01" class="form-label">ราคารวม (ราคาที่พัก * จำนวนคน)</label>
+        <label for="validationCustom01" class="form-label">ราคารวม (ราคาที่พัก * จำนวนวัน)</label>
         <input type="text" class="form-control" id="hotelTotal" value="" aria-label="readonly input example" readonly>
       </div>
     <!-- Vat -->
